@@ -3,7 +3,6 @@ import React from 'react'
 
 import { IncludeArchivedCheckbox } from '../../../components/IncludeArchivedCheckbox'
 import { ScalingLegend } from '../../../components/ScalingLegend'
-import { IndexCell } from '../../../components/table/IndexCell'
 import { ProjectCell } from '../../../components/table/ProjectCell'
 import { getScalingRowProps } from '../../../components/table/props/getScalingRowProps'
 import { RiskCell } from '../../../components/table/RiskCell'
@@ -33,14 +32,6 @@ export interface ScalingRiskViewEntry {
 
 export function ScalingRiskView({ items }: ScalingRiskViewProps) {
   const columns: ColumnConfig<ScalingRiskViewEntry>[] = [
-    {
-      name: '#',
-      alignCenter: true,
-      minimalWidth: true,
-      getValue: (entry, index) => {
-        return <IndexCell entry={entry} index={index + 1} />
-      },
-    },
     {
       name: 'Name',
       getValue: (project) => <ProjectCell type="layer2" project={project} />,
